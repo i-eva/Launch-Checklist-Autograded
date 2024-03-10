@@ -18,8 +18,22 @@ function addDestinationInfo(document, name, diameter, star, distance, moons, ima
  }
  
  function validateInput(testInput) {
-    
- }
+    if (testInput.pilotInput === "" || testInput.copilotInput === "" || testInput.fuelLevelInput === "" || testInput.cargoMassInput === "") {
+        alert("Empty")  
+    } else if (testInput.pilotInput) {
+        let letters = /^[A-Za-z]+$/;
+        if((testInput.pilotInput).match(letters) || (testInput.copilotInput).match(letters))
+            {
+         return true;
+               }
+         else
+            {
+            alert("message");
+            return false;
+         }
+    }
+};
+
  
  function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
     

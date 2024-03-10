@@ -24,7 +24,8 @@ window.addEventListener("load", function() {
         copilot = document.querySelector("input[name=copilotName]")
         fuelLevel = document.querySelector("input[name=fuelLevel]")
         cargoMass = document.querySelector("input[name=cargoMass]")
-        console.log(pilot.value, copilot.value,fuelLevel.value, cargoMass.value);
+        testInput = {pilotInput: pilot.value, copilotInput: copilot.value, fuelLevelInput: fuelLevel.value, cargoMassInput: cargoMass.value}
+        validateInput(testInput)
     });
 
 });
