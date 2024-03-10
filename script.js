@@ -14,18 +14,22 @@ window.addEventListener("load", function() {
     // })
     
     list = document.getElementById("faultyItems");
-    let pilot, copilot, fuelLevel, cargoMass;
+    let pilot, copilot, fuelLevel, cargoMass, cargoLevel;
 
     // Declare the form submit button
     let button = document.getElementById("formSubmit");
     // add event listener for when button clicked
-    button.addEventListener("click", function() {
+    button.addEventListener("click", function(event) {
         pilot = document.getElementById("pilotName");
         copilot = document.querySelector("input[name=copilotName]")
         fuelLevel = document.querySelector("input[name=fuelLevel]")
         cargoMass = document.querySelector("input[name=cargoMass]")
+        cargoLevel = document.querySelector("input[name=cargoMass]")
         testInput = {pilotInput: pilot.value, copilotInput: copilot.value, fuelLevelInput: fuelLevel.value, cargoMassInput: cargoMass.value}
-        validateInput(testInput)
+        if (!validateInput(testInput)) {
+            event.preventDefault();
+        }
+        formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel)
     });
 
 });
