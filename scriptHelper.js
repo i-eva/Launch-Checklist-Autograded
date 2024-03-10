@@ -29,17 +29,17 @@ function validateInput(testInput) {
 
 function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
      // for valid input, update the list and make it visible
-    if (validateInput(pilot.value) === "Empty") {
-    } else if (validateInput(pilot.value) === "Is a Number") {
+    if (validateInput(pilot) === "Empty") {
+    } else if (validateInput(pilot) === "Is a Number") {
     }
-    if (validateInput(copilot.value) === "Empty") { 
-    } else if (validateInput(copilot.value) === "Is a Number") { 
+    if (validateInput(copilot) === "Empty") { 
+    } else if (validateInput(copilot) === "Is a Number") { 
     }
-    if (validateInput(fuelLevel.value) === "Empty") { 
-    } else if (validateInput(fuelLevel.value) === "Not a Number") {
+    if (validateInput(fuelLevel) === "Empty") { 
+    } else if (validateInput(fuelLevel) === "Not a Number") {
     }
-    if (validateInput(cargoLevel.value) === "Empty") {
-    } else if (validateInput(cargoLevel.value) === "Not a Number") {  
+    if (validateInput(cargoLevel) === "Empty") {
+    } else if (validateInput(cargoLevel) === "Not a Number") {  
     }
         // declare status
         launchStatus = document.getElementById("launchStatus");
