@@ -21,10 +21,10 @@ window.addEventListener("load", function() {
     // add event listener for when button clicked
     button.addEventListener("click", function(event) {
         list = document.getElementById("faultyItems");
-        pilot = document.getElementById("pilotName");
-        copilot = document.querySelector("input[name=copilotName]");
-        fuelLevel = document.querySelector("input[name=fuelLevel]");
-        cargoLevel = document.querySelector("input[name=cargoMass]");
+        pilot = document.getElementById("pilotName.value");
+        copilot = document.querySelector("input[name=copilotName].value");
+        fuelLevel = document.querySelector("input[name=fuelLevel].value");
+        cargoLevel = document.querySelector("input[name=cargoMass].value");
         formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel);
         event.preventDefault();
     });
