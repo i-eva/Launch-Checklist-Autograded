@@ -75,19 +75,24 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
             launchStatus.style.color = 'red';
         } 
     // now that list is fully updated, make list visible
-        list.style.visibility = 'visible';
+    list.style.visibility = 'visible';
 }
  
  async function myFetch() {
      let planetsReturned;
  
-     planetsReturned = await fetch().then( function(response) {
-         });
- 
+     planetsReturned = await fetch("https://handlers.education.launchcode.org/static/planets.json").then( function(response) {
+        response.json().then(function(json) {
+            console.log(json);
+        });
+     });
      return planetsReturned;
  }
  
  function pickPlanet(planets) {
+    maxValue = myFetch().length;
+    index = (Math.floor(Math.random()*maxValue))
+    // got interrupted here
  }
  
  module.exports.addDestinationInfo = addDestinationInfo;
