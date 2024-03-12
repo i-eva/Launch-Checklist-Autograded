@@ -29,26 +29,14 @@ function validateInput(testInput) {
 
 function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
      // for valid input, update the list and make it visible
-    if (validateInput(pilot) === "Empty") {
-        alert("Did you forget something? Please enter a name for the pilot");
-    } else if (validateInput(pilot) === "Is a Number") {
-        alert("Is that an Id number? Please enter a name for the pilot");
-    }
-    if (validateInput(copilot) === "Empty") { 
-        alert("Did you forget something? Please enter a name for the co-pilot");
-    } else if (validateInput(copilot) === "Is a Number") { 
-        alert("Is that an Id number? Please enter a name for the co-pilot");
-    }
-    if (validateInput(fuelLevel) === "Empty") {
-        alert("Did you forget something? Please enter your fuel amount in liters");
-    } else if (validateInput(fuelLevel) === "Not a Number") {
-        alert("Did you spell it out? I need a number... Please enter your fuel amoung in liters"); 
-    }
-    if (validateInput(cargoLevel) === "Empty") {
-        alert("Did you forget something? Please enter your cargo mass in kilograms");
-    } else if (validateInput(cargoLevel) === "Not a Number") { 
-        alert("Did you spell it out? I need a number... Please enter your cargo mass in kilograms"); 
-    }
+    if (validateInput(pilot) === "Empty" || validateInput(copilot) === "Empty" || validateInput(fuelLevel) === "Empty" || validateInput(cargoLevel)=== "Empty") {
+        alert("Empty");
+    } else if (validateInput(pilot) === "Is a Number" || validateInput(copilot) === "Is a Number") {
+        alert("Is a Number");
+    } else if (validateInput(fuelLevel) === "Not a Number" || validateInput(cargoLevel) === "Not a Number")  {
+        alert("Not a number"); 
+    } else {
+
         // declare status
         launchStatus = document.getElementById("launchStatus");
         pilotStatus = document.getElementById("pilotStatus");
@@ -84,6 +72,7 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
         } 
     // now that list is fully updated, make list visible
     list.style.visibility = 'visible';
+    }
 }
  
  async function myFetch() {
