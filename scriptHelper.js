@@ -49,6 +49,7 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
         // set go status
         let go = true;
         // compare fuel input to go level and update message (list 3)
+        // this is a comment
         if (fuelLevel >= 10000) {
             fuelStatus.innerHTML = `Fuel level high enough for launch`;
         } else {
@@ -87,9 +88,12 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
  }
  
  function pickPlanet(planets) {
-    maxValue = myFetch().length;
-    index = (Math.floor(Math.random()*maxValue))
+    // planets is an array of objects containing the properties that will be passed into ad destination info
+    //maxValue = myFetch().length;
+    console.log(myFetch().length)
+    //index = Math.floor(Math.random()*maxValue)
     // got interrupted here
+    // want to push to GitHub
  }
  
  module.exports.addDestinationInfo = addDestinationInfo;
