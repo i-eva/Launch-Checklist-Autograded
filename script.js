@@ -3,6 +3,7 @@
 window.addEventListener("load", function() {
 
     let listedPlanets;
+    let planet;
     // Set listedPlanetsResponse equal to the value returned by calling myFetch()
     let listedPlanetsResponse = myFetch();
     listedPlanetsResponse.then(function(result) {
@@ -12,10 +13,12 @@ window.addEventListener("load", function() {
             return listedPlanets;
     }).then( function(json) {
         listedPlanets = json;
-        console.log(listedPlanets);
+        // console.log(listedPlanets);
+        planet = pickPlanet(listedPlanets);
         // Below this comment call the appropriate helper functions to pick
-        // a planet fom the list of planets and add that information to your destination. 
+        // a planet fom the list of planets and add that information to your destination.
     })
+
   
     
     let pilot, copilot, fuelLevel, cargoLevel;

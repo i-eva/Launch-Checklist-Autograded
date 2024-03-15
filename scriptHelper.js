@@ -3,17 +3,18 @@
 require('cross-fetch/polyfill');
 
 function addDestinationInfo(document, name, diameter, star, distance, moons, imageUrl) {
+
     // Here is the HTML formatting for our mission target div.
     /*
                  <h2>Mission Destination</h2>
                  <ol>
                      <li>Name: ${name}</li>
-                     <li>Diameter: $(diameter}</li>
+                     <li>Diameter: ${diameter}</li>
                      <li>Star: ${star}</li>
-                     <li>Distance from Earth: (distance)</li>
-                     <li>Number of Moons: (moons)</li>
+                     <li>Distance from Earth: ${distance}</li>
+                     <li>Number of Moons: ${moons}</li>
                  </ol>
-                 <img src="imageUrl">
+                 <img src="imageURL">
     */
 }
  
@@ -83,11 +84,12 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
  }
  
  function pickPlanet(planets) {
-    // planets is an array of objects containing the properties that will be passed into add destination info
-    //maxValue = myFetch().length;
-    //console.log(myFetch().length)
-    //index = Math.floor(Math.random()*maxValue)
-    // got interrupted here
+    // planets is an array of objects containing properties that will be passed into add destination info
+    maxValue = planets.length;
+    index = Math.floor(Math.random()*maxValue);
+    console.log(index);
+    console.log(planets[index].name);
+    return planets[index]; 
  }
  
  module.exports.addDestinationInfo = addDestinationInfo;
