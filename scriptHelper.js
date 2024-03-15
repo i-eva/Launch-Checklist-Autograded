@@ -1,21 +1,20 @@
 // Write your helper functions here!
 
-require('cross-fetch/polyfill');
+//require('cross-fetch/polyfill');
 
 function addDestinationInfo(document, name, diameter, star, distance, moons, imageUrl) {
-
+    let div = document.getElementById("missionTarget");
     // Here is the HTML formatting for our mission target div.
-    /*
-                 <h2>Mission Destination</h2>
-                 <ol>
-                     <li>Name: ${name}</li>
-                     <li>Diameter: ${diameter}</li>
-                     <li>Star: ${star}</li>
-                     <li>Distance from Earth: ${distance}</li>
-                     <li>Number of Moons: ${moons}</li>
-                 </ol>
-                 <img src="imageURL">
-    */
+        div.innerHTML += `<h2>Mission Destination</h2>`
+        div.innerHTML += `<ol>`
+        div.innerHTML += `<li>Name: ${name}</li>`
+        div.innerHTML += `<li>Diameter: ${diameter}</li>`
+        div.innerHTML += `<li>Star: ${star}</li>`
+        div.innerHTML += `<li>Distance from Earth: ${distance}</li>`
+        div.innerHTML += `<li>Number of Moons: ${moons}</li>`
+        div.innerHTML += `</ol>`
+        div.innerHTML += `<img src= ${imageUrl}>`
+
 }
  
 function validateInput(testInput) {
@@ -87,6 +86,7 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
     // planets is an array of objects containing properties that will be passed into add destination info
     maxValue = planets.length;
     index = Math.floor(Math.random()*maxValue);
+    console.log(planets);
     console.log(index);
     console.log(planets[index].name);
     return planets[index]; 
