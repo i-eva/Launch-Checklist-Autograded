@@ -1,6 +1,6 @@
 // Write your helper functions here!
 
-//require('cross-fetch/polyfill');
+require('cross-fetch/polyfill');
 
 function addDestinationInfo(document, name, diameter, star, distance, moons, imageUrl) {
     let missionTarget = document.getElementById("missionTarget");
@@ -70,7 +70,8 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
  
  async function myFetch() {
      let planetsReturned;
-     planetsReturned = await fetch("https://handlers.education.launchcode.org/static/planets.json");
+     planetsReturned = await fetch("https://handlers.education.launchcode.org/static/planets.json").then(function(response)
+     {return response.json()});
      return planetsReturned;
  }
 

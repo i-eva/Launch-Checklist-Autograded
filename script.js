@@ -5,12 +5,7 @@ window.addEventListener("load", function() {
     let planet;
     // Set listedPlanetsResponse equal to the value returned by calling myFetch()
     let listedPlanetsResponse = myFetch()
-    listedPlanetsResponse.then(function(result) {
-        listedPlanets = result;
-        console.log(listedPlanets);
-        listedPlanets = listedPlanets.json()
-            return listedPlanets;
-        }).then( function(json) {
+        listedPlanetsResponse.then( function(json) {
             listedPlanets = json;
             // Below this comment call the appropriate helper functions to pick a planet fom the list of planets
             planet = pickPlanet(listedPlanets);
