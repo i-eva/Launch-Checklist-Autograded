@@ -40,15 +40,14 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
         copilotStatus.innerHTML = `Co-pilot ${copilot} is ready for launch`;
         // set go status
         let go = true;
-        // compare fuel input to go level and update message (list 3)
-        // this is a comment
+        // compare fuel input to go criteria and update message (list 3)
         if (fuelLevel >= 10000) {
             fuelStatus.innerHTML = `Fuel level high enough for launch`;
         } else {
             fuelStatus.innerHTML = `Fuel level too low for launch`;
             go = false;
         }
-        // compare cargo input to go level and update message (list 4)
+        // compare cargo input to go criteria and update message (list 4)
         if (cargoLevel < 10000) {
             cargoStatus.innerHTML = `Cargo mass low enough for launch`;
         } else {
