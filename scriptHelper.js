@@ -4,7 +4,7 @@ require('cross-fetch/polyfill');
 
 function addDestinationInfo(document, name, diameter, star, distance, moons, imageUrl) {
     let missionTarget = document.getElementById("missionTarget");
-    missionTarget.innerHTML.replace(/\s/g, '');
+    //missionTarget.innerHTML.replace(/\s/g, '');
     missionTarget.innerHTML = `<h2>Mission Destination</h2><ol><li>Name: ${name}</li><li>Diameter: ${diameter}</li><li>Star: ${star}</li><li>Distance from Earth: ${distance}</li><li>Number of Moons: ${moons}</li></ol><img src= ${imageUrl}>`;
 
 }
@@ -20,13 +20,13 @@ function validateInput(testInput) {
 };
 
 function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
-     // for valid input, update the list and make it visible
+     // for valid input, update the list and make it visible: make better text
     if (validateInput(pilot) === "Empty" || validateInput(copilot) === "Empty" || validateInput(fuelLevel) === "Empty" || validateInput(cargoLevel)=== "Empty") {
-        alert("Empty");
+        alert("All fields are required");
     } else if (validateInput(pilot) === "Is a Number" || validateInput(copilot) === "Is a Number") {
-        alert("Is a Number");
+        alert("Please enter a name for pilot and copliot");
     } else if (validateInput(fuelLevel) === "Not a Number" || validateInput(cargoLevel) === "Not a Number")  {
-        alert("Not a number"); 
+        alert("Please enter a numnber for mass of cargo and volume of fuel"); 
     } else {
 
         // declare status
@@ -84,7 +84,7 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
     console.log(planets);
     console.log(index);
     console.log(planets[index].name);
-    return planets[2]; 
+    return planets[index]; 
  }
  
  module.exports.addDestinationInfo = addDestinationInfo;
